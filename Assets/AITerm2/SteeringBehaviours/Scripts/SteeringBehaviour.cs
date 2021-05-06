@@ -15,7 +15,7 @@ namespace Steering
             // do the calculating of the positions. No force calculations yet
 
             //* Calculate the new force and apply it to the agent.
-            Vector3 force = Calculate(_agent);
+            Vector3 force = Calculate(_agent).normalized;
             _agent.UpdateCurrentForce(force);
 
             //* Calculate the rotation using Slerp, The current rotation and the forcee for the target.
@@ -43,7 +43,7 @@ namespace Steering
         /// <summary>
         ///* The function that the behaviours need to overide to calculate their forces for the agent.
         /// </summary>
-        protected abstract Vector3 Calculate(SteeringAgent _agent);
+        public abstract Vector3 Calculate(SteeringAgent _agent);
         
     }
 }

@@ -57,7 +57,7 @@ namespace Wandering // a specific address, up until we use the namespace, c# won
         /// Uses jitter to create the wandering effect.
         /// </summary>
         /// <returns></returns>
-        private Vector3 CalculateForce()
+        public Vector3 CalculateForce()
         {
             //* first copy the current force and calculate the random offset using jitter.
             Vector3 force = currentForce;

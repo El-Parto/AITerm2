@@ -6,7 +6,7 @@ namespace Steering
     
     public static class SteeringAgentHelper
     {
-        const int viewDirections = 100; // constant variables are just like static variables, but you can't change them during run time
+        const int viewDirections = 300; // constant variables are just like static variables, but you can't change them during run time
 
         // read only means not modifyable on runtime. IT's only changeble by hard coding before build/play
 
