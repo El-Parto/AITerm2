@@ -23,7 +23,7 @@ namespace Steering
             Quaternion rotation = Quaternion.Slerp(
                 _agent.Rotation,
                 Quaternion.LookRotation(_agent.CurrentForce != Vector3.zero ? _agent.CurrentForce : _agent.Forward),
-                Time.deltaTime);
+                Time.deltaTime * 10);
 
             // * Calculate the position by finding the corect movement then damping the difference
 

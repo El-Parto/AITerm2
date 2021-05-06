@@ -15,17 +15,23 @@ namespace Steering
         public Vector3 Right => transform.right;
         public Vector3 Up => transform.up;
 
+        
         public Vector3 CurrentForce => currentForce; //same as force in the wanderer script.
         
         // not serialised, not going to save values, between playing
         [System.NonSerialized] public Vector3 velocity;
         // properties can't modify properties as references
 
+        // properties always have capitals.
         public float Speed => speed;
+        public float ViewAngle => viewAngle;
         public float MovementSmoothing => smoothing;
 
+        
+        
 
         [SerializeField, Range(.01f, .1f)] private float smoothing = .05f;
+        [SerializeField, Range(45f, 180)] private float viewAngle = 180f; //smooth angle
         [SerializeField] private new MeshRenderer renderer;
         [SerializeField] private SteeringBehaviour behaviour;
 
@@ -44,7 +50,20 @@ namespace Steering
         {
             transform.localPosition = _pos;
             transform.localRotation = _rot;
+            
         }
-    
+
+        // Implement this OnDrawGizomselected if you want to draw Gizmo only if the object is selected.
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.blue;
+
+            // we want force recalculate to be true now, and recalc the points every frame
+            foreach(Vector3 direction in SteeringAgentHelper.DirectionsInCone(this, true))
+            {
+                Gizmos.DrawSphere(transform.position + direction, .1f);
+            }
+        }
+
     }
 }

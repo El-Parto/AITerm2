@@ -516,7 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb024f23d504e5144b5a6dcea07f6942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: 0.05
+  smoothing: 0.0338
+  viewAngle: 180
   renderer: {fileID: 144467789}
   behaviour: {fileID: 11400000, guid: 9fe1d254251847340a549bef20a5868c, type: 2}
 --- !u!4 &1583399106
