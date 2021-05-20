@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef950f38f5d602d4fb99bce884eafb30, type: 3}
   m_Name: Composite
   m_EditorClassIdentifier: 
-  behaviours: []
+  behaviours:
+  - weighting: 5
+    behaviour: {fileID: 11400000, guid: 6e59c0695d3d3b04a86a0488ea243a0c, type: 2}
+  - weighting: 1
+    behaviour: {fileID: 11400000, guid: 9fe1d254251847340a549bef20a5868c, type: 2}
